@@ -1,6 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../../last/CustomSearchDelegate.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
@@ -12,6 +15,8 @@ class HeaderWithSearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var BorderRadius;
+    var Radius;
     return Container(
       margin: EdgeInsets.only(
         bottom: kDefaultPadding * 2.5,
@@ -82,10 +87,14 @@ class HeaderWithSearchBox extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(
-                    Icons.search,
-                    color: kPrimaryColor,
-                  ),
+                  IconButton(
+                      onPressed: () {
+                        showSearch(
+                          context: context,
+                          delegate: CustomSearchDelegate(),
+                        );
+                      },
+                      icon: Icon(Icons.search))
                 ],
               ),
             ),

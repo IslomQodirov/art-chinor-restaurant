@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home/components/second_plants.dart';
 
 import '../../../constants.dart';
 
@@ -21,7 +24,12 @@ class TitleWithMoreBtn extends StatelessWidget {
             text: title,
           ),
           Spacer(),
-          TextButton(onPressed: press, child: Text("ещё")),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => SecondPlants())));
+              },
+              child: Text("ещё")),
         ],
       ),
     );

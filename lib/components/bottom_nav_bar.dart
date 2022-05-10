@@ -1,4 +1,9 @@
+//ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/home/components/about_page.dart';
+import 'package:flutter_application_1/screens/home/components/setting_page.dart';
+import 'package:flutter_application_1/screens/home/components/recomends.dart';
 
 import '../constants.dart';
 
@@ -22,29 +27,32 @@ class BottonNavigationBar extends StatelessWidget {
           color: kPrimaryColor.withOpacity(0.38),
         ),
       ]),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.favorite_outline,
-                color: Colors.green,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.home,
-                color: Colors.green,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.info_outline,
-                color: Colors.green,
-              ))
-        ],
-      ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => SettingsPage())));
+            },
+            icon: Icon(
+              Icons.settings,
+              color: Colors.green,
+            )),
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.home,
+              color: Colors.green,
+            )),
+        IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => AboutPage())));
+            },
+            icon: Icon(
+              Icons.info_outline,
+              color: Colors.green,
+            ))
+      ]),
     );
   }
 }

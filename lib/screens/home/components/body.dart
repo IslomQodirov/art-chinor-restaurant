@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants.dart';
+import 'package:flutter_application_1/last/goriyachi_zakuski.dart';
+import 'package:flutter_application_1/last/salats_page.dart';
+import 'package:flutter_application_1/last/steka_page.dart';
+import 'package:flutter_application_1/screens/details/details_plant.dart';
 
 import 'Header_with_searchbox.dart';
 import 'Title_with_more_btn.dart';
@@ -25,10 +29,20 @@ class Body extends StatelessWidget {
             title: "САЛАТЫ",
             press: () {},
           ),
-          FeaturedPlants(),
+          RecomendsPlants(),
           SizedBox(
             height: kDefaultPadding,
-          )
+          ),
+          //TitleWithMoreBtn(
+          //title: "СТЕЙКА",
+          //press: () {},
+          //),
+          //RecomendsPlants(),
+          //TitleWithMoreBtn(
+          //title: "Горячие закуски",
+          //press: () {},
+          //),
+          //RecomendsPlants(),
         ],
       ),
     );

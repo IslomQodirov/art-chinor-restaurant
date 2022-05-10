@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/last/salats_page.dart';
 
 import '../../../constants.dart';
 
 class FeaturedPlants extends StatelessWidget {
   const FeaturedPlants({
     Key? key,
+    required this.title,
+    required this.press,
+    required String text,
   }) : super(key: key);
+
+  final String title;
+
+  final press;
 
   @override
   Widget build(BuildContext context) {
@@ -13,22 +21,18 @@ class FeaturedPlants extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          FeaturePlantCart(
-            image: "assets/images/art_chinor_calat_vegetari.jpg",
+          FeaturedPlants(
+            text: title,
             press: () {},
+            title: '',
           ),
-          FeaturePlantCart(
-            image: "assets/images/art_chinor_calati_nejnosti.jpg",
-            press: () {},
-          ),
-          FeaturePlantCart(
-            image: "assets/images/art_chinor_salat_kazbek.jpg",
-            press: () {},
-          ),
-          FeaturePlantCart(
-            image: "assets/images/art_chinor_salat_kraboviy.jpg",
-            press: () {},
-          ),
+          Spacer(),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => SalatsPage())));
+              },
+              child: Text("ещё")),
         ],
       ),
     );
